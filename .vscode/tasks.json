@@ -24,6 +24,28 @@
         },
         {
             "type": "shell",
+            "label": "C/C++: gcc build active file with OpenMP",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-Wall",
+                "-fopenmp",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/bin/${fileBasenameNoExtension}.out"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
             "label": "C/C++: gcc-8 build active file",
             "command": "/usr/bin/gcc-8",
             "args": [
