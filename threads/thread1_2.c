@@ -12,12 +12,12 @@ void* runner(int* n){
     printf("sum = %d\n", sum);
     pthread_exit(0);
 }
-void main(){
+int main(){
     pthread_t tid;
     pthread_attr_t attr;
     pthread_attr_init(&attr);
-    int k = 25;
+    int k = 5;
     pthread_create(&tid, &attr, runner, &k);
     pthread_join(tid, NULL);
-    return;
+    return 0;
 }
