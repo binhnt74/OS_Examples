@@ -17,5 +17,6 @@ int main(){
         pthread_create(&tid[i], &attr, runner, &tid[i]);
     for (i=0;i<n;i++)
         pthread_join(tid[i], NULL);
+    printf("Main thread terminated!\n");
     return 0;
 }

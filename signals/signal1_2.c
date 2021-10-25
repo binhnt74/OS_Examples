@@ -6,7 +6,7 @@
 void child_handler(int sig){
     //write(STDOUT_FILENO, "Hit child handler \n",20);
     printf("Hit child handler \n");
-    static int hits = 3;
+    static int hits = 1;
     if (hits>0){
         hits--;
     }
@@ -16,14 +16,14 @@ void child_handler(int sig){
 void parent_handler(int sig){
     //write(STDOUT_FILENO, "Hit parent handler \n",21);
     printf("Hit parent handler \n");
-    static int hits = 3;
+    static int hits = 2;
     if (hits>0){
         hits--;
     }
     else exit(1);
 }
 
-void main(){
+int main(){
     if (fork()==0){
         struct sigaction sa;
         sigemptyset(&sa.sa_mask);
@@ -51,5 +51,5 @@ void main(){
             /* code */
         }
     }
-    return;
+    return 0;
 }

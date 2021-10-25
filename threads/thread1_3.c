@@ -29,7 +29,7 @@ int main()
 
     if (cnt != N_THREADS * N)
     {
-        printf("Boom %d\n", cnt);
+        printf("Boom with difference %d\n", N_THREADS * N - cnt);
     }
     else
     {

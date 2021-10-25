@@ -33,7 +33,8 @@ int main()
         pthread_create(&tid[i], NULL, runner, NULL);
     for (i = 0; i < N_THREADS; i++)
         pthread_join(tid[i], NULL);
-
+    sem_destroy(&mutex);
+    
     if (cnt != N_THREADS * N)
     {
         printf("Boom %d\n", cnt);
@@ -42,6 +43,6 @@ int main()
     {
         printf("Ok %d\n", cnt);
     }
-
+    
     return 0;
 }
